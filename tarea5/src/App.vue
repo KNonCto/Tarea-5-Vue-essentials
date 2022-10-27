@@ -1,6 +1,8 @@
 <template>
   <img alt="Vue logo" src="./assets/img/logo.png" />
-  <UserInfo v-for="user in users" :user="user" :key="user.id.value" />
+  <ul class="list-group">
+    <UserInfo v-for="user in users" :user="user" :key="user.id.value" />
+  </ul>
   <HelloWorld msg="Welcome to Your Vue.js App" />
 </template>
 
