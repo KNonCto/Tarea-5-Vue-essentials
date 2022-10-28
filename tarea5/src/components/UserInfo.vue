@@ -6,6 +6,25 @@
     <img :src="user.picture.medium" />
     <h4 v-if="user.dob.age > 18">+18</h4>
     <h4 v-else>-18</h4>
+
+    <button
+      v-if="user.gender === `female`"
+      class="btn btn-danger"
+      @click="isHidden = !isHidden"
+    >
+      More Info
+    </button>
+    <button
+      v-if="user.gender === `male`"
+      class="btn btn-primary"
+      @click="isHidden = !isHidden"
+    >
+      More Info
+    </button>
+    <div v-if="!isHidden">
+      <h4>{{ user.email }}</h4>
+      <h4>{{ user.location.city }}</h4>
+    </div>
   </li>
 </template>
 
@@ -15,8 +34,10 @@ export default {
   props: {
     user: Object,
   },
-  methods: {
-    moreInfo: function () {},
+  data() {
+    return {
+      isHidden: true,
+    };
   },
 };
 </script>

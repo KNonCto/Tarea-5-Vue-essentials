@@ -1,20 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/img/logo.png" />
   <ul class="list-group">
     <UserInfo v-for="user in users" :user="user" :key="user.id.value" />
   </ul>
-  <HelloWorld msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import UserInfo from "./components/UserInfo.vue";
 import Users from "./assets/json/users.json";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
     UserInfo,
   },
   data() {
